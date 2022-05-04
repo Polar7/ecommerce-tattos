@@ -1,2 +1,6 @@
-package com.ecommerce.tattos.persistence.crud;public interface IProductoCrudRepository {
+package com.ecommerce.tattos.persistence.crud;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface IProductoCrudRepository {
 }

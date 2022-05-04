@@ -4,15 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
- * Clase que moldea la entidad Producto
+ * Clase que moldea la entidad Cliente
  */
-@Getter
-@Setter
+@Getter @Setter
 @Entity
 @Table(name = "clientes")
-public class Cliente {
+public class ClienteEntidad {
 
     @Id
     @Column(name = "id_cliente")
@@ -23,4 +23,7 @@ public class Cliente {
 
     @Column(name = "correo")
     private String correo;
+
+    @OneToMany(mappedBy = "clienteEntidad")
+    private List<CompraEntidad> compras;
 }
