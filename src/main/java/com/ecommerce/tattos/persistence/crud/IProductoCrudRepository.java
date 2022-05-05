@@ -10,10 +10,10 @@ public interface IProductoCrudRepository extends CrudRepository<ProductoEntidad,
 
     /**
      * Retorna una lista de productos ordenada por nombre dado su id de categoria
-     * @param idCategoria Id categoria de los productos
+     * @param idTipoProducto Id categoria de los productos
      * @return Lista de productos con determinado id ordenados por nombre
      */
-    List<ProductoEntidad> findByIdCategoriaOrderByNombreAsc(Long idCategoria);
+    List<ProductoEntidad> findByIdTipoProductoOrderByNombreAsc(Long idTipoProducto);
 
     /**
      * Retorna una lista de productos que tengan un stock menor al recibido por parametro

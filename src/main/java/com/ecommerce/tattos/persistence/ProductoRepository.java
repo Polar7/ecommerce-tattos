@@ -66,7 +66,7 @@ public class ProductoRepository implements IProductoRepository {
      */
     @Override
     public Optional<List<Producto>> getByCategory(Long categoriaId) {
-        List<ProductoEntidad> productosEntidad = iProductoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoriaId);
+        List<ProductoEntidad> productosEntidad = iProductoCrudRepository.findByIdTipoProductoOrderByNombreAsc(categoriaId);
         return Optional.of(mapper.toProductos(productosEntidad));
     }
 
