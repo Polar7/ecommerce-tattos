@@ -21,14 +21,14 @@ public interface IProductoRepository {
      * @param productoId Id del producto
      * @return El producto con el id proporcionado
      */
-    Optional<Producto> getProduct(int productoId);
+    Optional<Producto> getProduct(Long productoId);
 
     /**
      * Devuelve la lista de productos que pertenecen a una misma categoria
      * @param categoriaId Categoria de productos a retornar
      * @return Lista de productos con la categoria recibida por parametro
      */
-    Optional<List<Producto>> getByCategory(int categoriaId);
+    Optional<List<Producto>> getByCategory(Long categoriaId);
 
     /**
      * Crea un nuevo producto
@@ -41,5 +41,5 @@ public interface IProductoRepository {
      * Elimina un producto dado su id
      * @param productId Id del producto a borrar
      */
-    void delete(int productId);
+    void delete(Long productId);
 }

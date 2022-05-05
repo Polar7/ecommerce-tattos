@@ -21,7 +21,6 @@ public interface ITipoProductoMapper {
     //Recibe como fuente los datos de la entidad y los pasa a los de domino
     @Mapping(source = "idTipoProducto", target = "idTipoProducto")
     @Mapping(source = "descripcion", target = "descripcion")
-    @Mapping(source = "productos", target = "productos")
     TipoProducto toTipoProducto(TipoProductoEntidad tipoProductoEntidad);
 
     /**
@@ -31,5 +30,6 @@ public interface ITipoProductoMapper {
      */
     //Se aplica la configuracion inversa de la otra conversion
     @InheritInverseConfiguration
+    @Mapping(target = "productos", ignore = true)
     TipoProductoEntidad toTipoProductoEntidad(TipoProducto tipoProducto);
 }

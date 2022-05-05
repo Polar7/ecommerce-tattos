@@ -21,9 +21,4 @@ public class TipoProducto {
      */
     private String descripcion;
 
-    /**
-     * Lista de productos que tienen el mismo tipo producto
-     */
-    private List<Producto> productos;
-
 }

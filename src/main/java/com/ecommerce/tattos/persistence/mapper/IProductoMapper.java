@@ -25,7 +25,6 @@ public interface IProductoMapper {
     @Mapping(source = "precioVenta", target = "precioVenta")
     @Mapping(source = "cantidadStock", target = "cantidadStock")
     @Mapping(source = "urlImagen", target = "urlImagen")
-    @Mapping(source = "categoria", target = "category")
     Producto toProducto(ProductoEntidad producto);
 
     /**

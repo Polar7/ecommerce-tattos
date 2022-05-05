@@ -36,7 +36,7 @@ public class ProductoService {
      * @param productoId Id del producto
      * @return El producto con el id proporcionado
      */
-    public Optional<Producto> getProduct(int productoId) {
+    public Optional<Producto> getProduct(Long productoId) {
         return iProductoRepository.getProduct(productoId);
     }
 
@@ -45,7 +45,7 @@ public class ProductoService {
      * @param categoriaId Categoria de productos a retornar
      * @return Lista de productos con la categoria recibida por parametro
      */
-    public Optional<List<Producto>> getByCategory(int categoriaId){
+    public Optional<List<Producto>> getByCategory(Long categoriaId){
         return iProductoRepository.getByCategory(categoriaId);
     }
 
@@ -63,7 +63,7 @@ public class ProductoService {
      * @param productoId Id del producto a borrar
      * @return True si se logra borrar, false si el producto no existe
      */
-    public boolean delete(int productoId){
+    public boolean delete(Long productoId){
         try {
             iProductoRepository.delete(productoId);
             return true;

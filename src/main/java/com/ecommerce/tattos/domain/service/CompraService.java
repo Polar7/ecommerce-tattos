@@ -12,6 +12,9 @@ import java.util.Optional;
 public class CompraService {
 
     //Al llamar la interfaz, lo que se inyecta verdaderamente es la implementacion CompraRepository
+    /**
+     * Interfaz que tiene las reglas del repositorio
+     */
     private ICompraRepository iCompraRepository;
 
     @Autowired

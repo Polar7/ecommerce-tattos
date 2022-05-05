@@ -21,13 +21,13 @@ public interface ICompraProductoMapper {
 
     /**
      * Devuelve una entidad CompraProducto convertido de una ComprasProducto de dominio
-     * @param comprasProducto CompraProducto de dominio
+     * @param comprasProductoEntidad CompraProducto de dominio
      * @return Entidad CompraProducto convertido de un objeto de dominio
      */
     @InheritInverseConfiguration
     @Mapping(target = "compraEntidad", ignore = true)
     @Mapping(target = "productoEntidad", ignore = true)
     @Mapping(target = "id.idCompra", ignore = true)
-    ComprasProducto toComprasProducto(ComprasProducto comprasProducto);
+    ComprasProductoEntidad toComprasProductoEntidad(ComprasProducto comprasProductoEntidad);
 
 }
