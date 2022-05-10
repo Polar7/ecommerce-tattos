@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Clase que actua como un controlador tipo Rest para los productos
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {

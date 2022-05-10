@@ -24,7 +24,7 @@ CREATE TABLE PRODUCTOS (
 
 CREATE TABLE CLIENTES (
                           id_cliente      varchar(100),
-                          nombreCompleto varchar(100),
+                          nombre_completo varchar(100),
                           correo         varchar(100),
                           PRIMARY KEY (id_cliente));
 

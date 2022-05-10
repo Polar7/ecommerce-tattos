@@ -8,11 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 /**
  * Clase que actua como un controlador tipo Rest para las compras
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/compras")
 public class CompraController {

@@ -18,7 +18,7 @@ public class ClienteEntidad {
     @Column(name = "id_cliente")
     private String idCliente;
 
-    @Column(name = "nombreCompleto")
+    @Column(name = "nombre_completo")
     private String nombreCompleto;
 
     @Column(name = "correo")
