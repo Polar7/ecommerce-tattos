@@ -61,12 +61,12 @@ public class ProductoRepository implements IProductoRepository {
 
     /**
      * Retorna una lista optional de productos ordenada por nombre dado su id de categoria
-     * @param categoriaId Categoria de productos
+     * @param tipoProductoId Categoria de productos
      * @return Lista de productos con la categoria dada
      */
     @Override
-    public Optional<List<Producto>> getByCategory(Long categoriaId) {
-        List<ProductoEntidad> productosEntidad = iProductoCrudRepository.findByIdTipoProductoOrderByNombreAsc(categoriaId);
+    public Optional<List<Producto>> getByTipoProducto(Long tipoProductoId) {
+        List<ProductoEntidad> productosEntidad = iProductoCrudRepository.findByIdTipoProductoOrderByNombreAsc(tipoProductoId);
         return Optional.of(mapper.toProductos(productosEntidad));
     }
 

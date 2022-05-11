@@ -59,7 +59,7 @@ public class ProductoController {
      */
     @GetMapping("/tipos-productos/{tipoProductoId}")
     public ResponseEntity<List<Producto>> getByCategory(@PathVariable("tipoProductoId") Long tipoProductoId){
-        return ResponseEntity.of(productoService.getByCategory(tipoProductoId));
+        return ResponseEntity.of(productoService.getByTipoProducto(tipoProductoId));
     }
 
     /**
@@ -70,6 +70,19 @@ public class ProductoController {
     @PostMapping()
     public ResponseEntity<Producto> save(@RequestBody Producto producto){
         return new ResponseEntity<>(productoService.save(producto), HttpStatus.CREATED);
+    }
+
+    /**
+     * Actualiza un producto con nueva informacion
+     * @param productoId Id del producto
+     * @param producto Producto con la informacion nueva
+     * @return
+     */
+    @PatchMapping("/{productoId}")
+    public ResponseEntity update(@PathVariable("productoId") Long productoId, @RequestBody Producto producto){
+        return new ResponseEntity(this.productoService.update(productoId, producto)
+                ? HttpStatus.OK
+                : HttpStatus.NOT_FOUND);
     }
 
     /**

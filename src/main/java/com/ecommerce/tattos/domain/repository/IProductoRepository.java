@@ -28,7 +28,7 @@ public interface IProductoRepository {
      * @param categoriaId Categoria de productos a retornar
      * @return Lista de productos con la categoria recibida por parametro
      */
-    Optional<List<Producto>> getByCategory(Long categoriaId);
+    Optional<List<Producto>> getByTipoProducto(Long categoriaId);
 
     /**
      * Crea un nuevo producto

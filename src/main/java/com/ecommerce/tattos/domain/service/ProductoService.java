@@ -42,11 +42,11 @@ public class ProductoService {
 
     /**
      * Devuelve la lista de productos que pertenecen a una misma categoria
-     * @param categoriaId Categoria de productos a retornar
+     * @param tipoProductoId Categoria de productos a retornar
      * @return Lista de productos con la categoria recibida por parametro
      */
-    public Optional<List<Producto>> getByCategory(Long categoriaId){
-        return iProductoRepository.getByCategory(categoriaId);
+    public Optional<List<Producto>> getByTipoProducto(Long tipoProductoId){
+        return iProductoRepository.getByTipoProducto(tipoProductoId);
     }
 
     /**
@@ -56,6 +56,24 @@ public class ProductoService {
      */
     public Producto save(Producto producto){
         return iProductoRepository.save(producto);
+    }
+
+    /**
+     * Actualiza un producto con los nuevos datos
+     * @param productoId Id del producto
+     * @return Producto actualizado
+     */
+    public boolean update(Long productoId, Producto productoNuevo){
+        if(getProduct(productoId).isPresent()){
+            getProduct(productoId).ifPresent(producto -> {
+                producto.setNombre(productoNuevo.getNombre());
+                producto.setPrecioVenta(productoNuevo.getPrecioVenta());
+                producto.setCantidadStock(productoNuevo.getCantidadStock());
+                save(producto);
+            });
+            return true;
+        }
+        return false;
     }
 
     /**
