@@ -24,6 +24,6 @@ public class ClienteEntidad {
     @Column(name = "correo")
     private String correo;
 
-    @OneToMany(mappedBy = "clienteEntidad")
+    @OneToMany(mappedBy = "clienteEntidad", cascade = {CascadeType.ALL})
     private List<CompraEntidad> compras;
 }
